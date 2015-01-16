@@ -1,0 +1,14 @@
+{
+  "name": "node-ucatalk",
+  "version": "0.0.1",
+  "repository": "git@github.com:SFantasy/node-ucatalk.git",
+  "scripts": {
+    "start": "node index.js",
+    "test": "supervisor index.js"
+  },
+  "dependencies": {
+    "express": "^4.10.7",
+    "jade": "^1.9.0",
+    "socket.io": "^1.2.1"
+  }
+}
