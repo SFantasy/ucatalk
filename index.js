@@ -24,8 +24,14 @@ routes(app);
 
 io.on('connection', function (socket) {
   console.log('One user connected');
+
   socket.on('disconnect', function () {
     console.log('One user disconnect');
+  });
+
+  socket.on('chat msg', function (msg) {
+    console.log(msg);
+    io.emit('chat msg', msg);
   });
 });
 
