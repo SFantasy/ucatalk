@@ -1,12 +1,22 @@
 extends layout
 
 block content
-  h1 ucatalk
-  ul#messageList
-  input(
-    placeholder="Enter message here"
-    type="text"
-    id="message"
-  )
-  button#send Send
+  div#login.content
+    form
+      input(
+        placeholder="输入昵称"
+        type="text"
+        id="username"
+      )
+      button#go.btn.btn-block.btn-primary Go
+  div#chatroom.hide.content
+    p#roominfo
+    ul#messageList
+    div.bar.bar-standard.bar-footer
+      input(
+        placeholder="Enter message here"
+        type="text"
+        id="message"
+      )
+      span.icon.icon-play.pull-right#send
   script(src="/js/index.js")

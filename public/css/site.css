@@ -1,0 +1,30 @@
+.hide {
+  display: none;
+}
+
+.bar-footer {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+}
+
+#roominfo {
+  text-align: center;
+  padding: 10px 0;
+}
+
+#message {
+  width: 90%;
+}
+
+#messageList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 45px;
+  overflow-y: scroll;
+}
+
+#messageList p {
+  padding: 5px 10px;
+}

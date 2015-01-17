@@ -22,16 +22,43 @@ app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
 routes(app);
 
+var userNames = {};
+var userNumber = 0;
+
 io.on('connection', function (socket) {
+  var added = false;
+
   console.log('One user connected');
 
   socket.on('disconnect', function () {
     console.log('One user disconnect');
+    userNumber--;
   });
 
   socket.on('chat msg', function (msg) {
-    console.log(msg);
-    io.emit('chat msg', msg);
+
+    socket.broadcast.emit('chat msg', {
+      username: socket.name,
+      message: msg
+    });
+  });
+
+  socket.on('user join', function (name) {
+    socket.name = name;
+    userNames[name] = name;
+    userNumber++;
+    added = true;
+
+    socket.emit('login', {
+      userNumber: userNumber
+    });
+
+    socket.broadcast.emit('user join', {
+      name: socket.name,
+      number: userNumber
+    });
+
+    console.log('Total user: ' + userNumber);
   });
 });
 
