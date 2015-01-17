@@ -1,7 +1,16 @@
 doctype html
 html
   head
+    meta(charset="utf-8")
+    meta(name="viewport" content="initial-scale=1, maximum-scale=1")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black")
     title ucatalk
-    script(src='/js/socket.io-1.2.1.js')
+    link(rel="styleSheet" type="text/stylesheet" href="/css/normalize.css")
+    link(rel="styleSheet" type="text/stylesheet" href="/css/ratchet.min.css")
+    link(rel="styleSheet" type="text/stylesheet" href="/css/ratchet-theme-ios.min.css")
+    link(rel="styleSheet" type="text/stylesheet" href="/css/site.css")
+    script(src="/js/ratchet.min.js")
+    script(src="/js/socket.io-1.2.1.js")
   body
     block content
